@@ -8,6 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     authContext.loadUser();
+    // so that it dont complain about dependencies
     // eslint-disable-next-line
   }, []);
 
