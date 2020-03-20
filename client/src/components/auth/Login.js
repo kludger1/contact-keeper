@@ -1,6 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
-import AlertContext from '../../context/alert/alertContext';
-import AuthContext from '../../context/auth/authContext';
+import React, { useState, useContext, useEffect } from "react";
+import AlertContext from "../../context/alert/alertContext";
+import AuthContext from "../../context/auth/authContext";
+import { Link } from "react-router-dom";
+
+import "../../App.css";
+import "../styles/form.css";
 
 const Login = props => {
   const alertContext = useContext(AlertContext);
@@ -11,18 +15,18 @@ const Login = props => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/');
+      props.history.push("/");
     }
-    if (error === 'Invalid Credentials') {
-      setAlert(error, 'danger');
+    if (error === "Invalid Credentials") {
+      setAlert(error, "danger");
       clearErrors();
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: ""
   });
 
   const { email, password } = user;
@@ -31,8 +35,8 @@ const Login = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-    if (email === '' || password === '') {
-      setAlert('Please fill in all fields', 'danger');
+    if (email === "" || password === "") {
+      setAlert("Please fill in all fields", "danger");
     } else {
       login({
         email,
@@ -42,37 +46,39 @@ const Login = props => {
   };
 
   return (
-    <div className='form-container'>
-      <h1>
-        Account <span className='text-primary'>Login</span>
-      </h1>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
-          <input
-            type='email'
-            name='email'
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            onChange={onChange}
-            required
-          />
-        </div>
+    <div className="form-container">
+      <h1 className="main-header">Login</h1>
+      <form className="input-container" onSubmit={onSubmit}>
         <input
-          type='submit'
-          value='Login'
-          className='btn btn-primary btn-block'
+          className="input"
+          placeholder="Email"
+          type="email"
+          name="email"
+          value={email}
+          onChange={onChange}
+          required
         />
+
+        <input
+          className="input"
+          placeholder="Password"
+          type="password"
+          name="password"
+          value={password}
+          onChange={onChange}
+          required
+        />
+
+        <input type="submit" value="Login" className="input-btn" />
       </form>
+      <div className="info-container">
+        <span className="little-info">
+          Don’t have an Account?
+          <Link className="little-info--link" to="/register">
+            Signup
+          </Link>
+        </span>
+      </div>
     </div>
   );
 };

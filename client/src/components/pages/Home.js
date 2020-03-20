@@ -3,6 +3,9 @@ import Contacts from '../contacts/Contacts';
 import ContactForm from '../contacts/ContactForm';
 import ContactFilter from '../contacts/ContactFilter';
 import AuthContext from '../../context/auth/authContext';
+
+import '../styles/home.css'
+
 const Home = () => {
   const authContext = useContext(AuthContext);
 
@@ -13,11 +16,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='grid-2'>
-      <div>
+    <div className='container'>
+      <div className="contact-form-container">
         <ContactForm />
       </div>
-      <div>
+        <div className="contacts-container">
         <ContactFilter />
         <Contacts />
       </div>

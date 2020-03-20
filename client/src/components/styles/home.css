@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+.contact-form-container {
+    width: 50%;
+    margin-right: .5rem;
+    background-color: pink;
+}
+
+.contacts-container {
+    width: 50%;
+    margin-left: .5rem;
+    background-color: red;
+}

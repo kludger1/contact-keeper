@@ -1,0 +1,49 @@
+.input-container {
+    width: 250px;
+}
+
+.input {
+    border: 1px solid #358F89;
+    padding: .5rem;
+    font-size: 1rem;
+    margin: .4rem 0;
+    width: 100%;
+}
+
+.input-name {
+    text-transform: capitalize;
+}
+
+.input::placeholder {
+    color: rgba(53, 143, 137, 0.26);
+}
+
+.input-btn {
+    color: #fff;
+    font-size: .9rem;
+    margin: .4rem 0 1rem 0;
+    padding: .5rem;
+    background-color: #358F89;
+    width: 107%;
+    border: none;
+    text-transform: uppercase;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+}
+
+.little-info {
+    color: rgba(60, 85, 83, 0.22);
+    font-size: .8rem;
+}
+
+.little-info--link {
+    color: #288F89;
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: .2rem;
+}
+
+
