@@ -32,18 +32,17 @@ const App = () => {
               <div className='container'>
                 <Alerts />
                 <Switch>
-                  <Route exact path='/' component={Home}/>
-                  {/*<PrivateRoute exact path='/' component={Home} />*/}
-                  {/*<div className="guest-container">*/}
-                  {/*  <div className="guest-container__img">*/}
-                  {/*      <WelcomeImg className="welcome-img"/>*/}
-                  {/*  </div>*/}
-                  {/*  <div className="guest-container__routes">*/}
-                  {/*    <Route exact path='/about' component={About} />*/}
-                  {/*    <Route exact path='/register' component={Register} />*/}
-                  {/*    <Route exact path='/login' component={Login} />*/}
-                  {/*  </div>*/}
-                  {/*</div>*/}
+                  <PrivateRoute exact path='/' component={Home} />
+                  <div className="guest-container">
+                    <div className="guest-container__img">
+                        <WelcomeImg className="welcome-img"/>
+                    </div>
+                    <div className="guest-container__routes">
+                      <Route exact path='/about' component={About} />
+                      <Route exact path='/register' component={Register} />
+                      <Route exact path='/login' component={Login} />
+                    </div>
+                  </div>
 
                 </Switch>
               </div>
