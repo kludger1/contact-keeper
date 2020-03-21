@@ -43,7 +43,7 @@ const Navbar = () => {
   );
   return (
     <div className='navbar bg-primary'>
-        <h1 className="navbar-icon">Contact Keeper</h1>
+        <h1 className="navbar-icon">CK</h1>
       <ul className="navbar-list">{isAuthenticated ? authLinks : guestLinks}</ul>
     </div>
   );

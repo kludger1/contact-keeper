@@ -23,9 +23,9 @@ const ContactFilter = () => {
   };
 
   return (
-    <form>
+    <form className="filler-form">
       <input
-        className="input"
+        className="input filler-input"
         ref={text}
         type="text"
         placeholder="Filter Contacts..."

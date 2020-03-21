@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ContactContext from '../../context/contact/contactContext';
 
+import '../styles/form.css'
+
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
   const {
@@ -17,14 +19,14 @@ const ContactItem = ({ contact }) => {
     clearCurrentContact();
   };
   return (
-    <div className='card bg-light'>
-      <h3 className='text-primary text-left'>
+    <div className='contact-item'>
+      <h3 className='contact-name'>
         {name}{' '}
         <span
           style={{ float: 'right' }}
           className={
-            'badge ' +
-            (type === 'professional' ? 'badge-success' : 'badge-primary')
+            'contact-type-' +
+            (type === 'professional' ? 'professional' : 'personal')
           }
         >
           {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -32,26 +34,26 @@ const ContactItem = ({ contact }) => {
       </h3>
       <ul className='list'>
         {email && (
-          <li>
-            <i className='fas fa-envelope-open' />
+          <li className="contact-text">
+            <i className='fas fa-envelope-open contact-icon' />
             {email}
           </li>
         )}
         {phone && (
-          <li>
-            <i className='fas fa-phone' />
+          <li className="contact-text">
+            <i className='fas fa-phone contact-icon' />
             {phone}
           </li>
         )}
       </ul>
       <p>
         <button
-          className='btn btn-dark btn-sm'
+          className='contact-btn-edit'
           onClick={() => setCurrentContact(contact)}
         >
           Edit
         </button>
-        <button className='btn btn-danger btn-sm' onClick={onDelete}>
+        <button className='contact-btn-delete' onClick={onDelete}>
           Delete
         </button>
       </p>
