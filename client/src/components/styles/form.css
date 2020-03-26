@@ -66,6 +66,10 @@
   width: 100%;
 }
 
+.contact-form-btn {
+  background-color: #28a745 ;
+}
+
 .filler-form {
   width: 100%;
   display: flex;
@@ -117,17 +121,21 @@
   padding: 0;
 }
 
-.contact-type-professional {
+.type {
   border-radius: 3px;
   font-size: 1rem;
   padding: 0.2rem;
-  color: #208f8a;
-  background-color: rgba(40, 143, 137, 0.4);
+}
+
+.contact-type-professional {
+  color: #108f50;
+  background-color: rgba(11, 143, 61, 0.4);
+
 }
 
 .contact-type-personal {
   color: #208f8a;
-  background-color: #288f89;
+  background-color: rgba(40, 143, 137, 0.4);
 }
 
 .contact-text {

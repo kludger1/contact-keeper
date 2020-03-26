@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-// import Alerts from '../../context/alert/alertContext';
+import Alerts from '../../context/alert/alertContext';
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
 import {Link} from "react-router-dom";

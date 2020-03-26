@@ -25,7 +25,7 @@ const ContactItem = ({ contact }) => {
         <span
           style={{ float: 'right' }}
           className={
-            'contact-type-' +
+            'type contact-type-' +
             (type === 'professional' ? 'professional' : 'personal')
           }
         >
